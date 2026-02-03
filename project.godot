@@ -24,6 +24,11 @@ config/icon="res://icon.svg"
 SignalManager="*uid://k5rby1rtor7p"
 GameManager="*uid://d0va65sxovpbd"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
 [input]
 
 Pause={
