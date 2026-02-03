@@ -1,0 +1,16 @@
+class_name Juego extends Node
+
+@onready var _menu_pausa := $CanvasLayer/MenuPausa as MenuPausa
+
+func _ready() -> void:
+	_menu_pausa.open()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"Pause"):
+		var tree := get_tree()
+		tree.paused = not tree.paused
+		if tree.paused:
+			_menu_pausa.open()
+		else:
+			_menu_pausa.close()
+		get_tree().root.set_input_as_handled()
