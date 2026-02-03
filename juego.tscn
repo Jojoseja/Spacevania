@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cglb0phrvl0fw" path="res://juego.gd" id="1_gvuhb"]
 [ext_resource type="PackedScene" uid="uid://cuegcoev4b7t1" path="res://gui/menu_pausa.tscn" id="2_n74ki"]
+[ext_resource type="PackedScene" uid="uid://by6b1miig51u" path="res://level/level.tscn" id="3_n74ki"]
 
 [node name="Juego" type="Node" unique_id=81034054]
 process_mode = 3
@@ -10,3 +11,5 @@ script = ExtResource("1_gvuhb")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1149682183]
 
 [node name="MenuPausa" parent="CanvasLayer" unique_id=699816448 instance=ExtResource("2_n74ki")]
+
+[node name="Level" parent="." unique_id=1320665385 instance=ExtResource("3_n74ki")]
