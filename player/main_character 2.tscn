@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d3iy3g8131fi5"]
+[gd_scene format=3 uid="uid://cmbnloxr40rr8"]
 
 [ext_resource type="Texture2D" uid="uid://bdbv3aptokck1" path="res://assets/1 Main Characters/2/Fall.png" id="1_wylso"]
 [ext_resource type="Script" uid="uid://1qg7oog4r2w4" path="res://player/main_character.gd" id="1_xw5xi"]
