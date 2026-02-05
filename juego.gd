@@ -1,6 +1,7 @@
 class_name Juego extends Node
 
 @onready var _menu_pausa := $CanvasLayer/MenuPausa as MenuPausa
+var player = load("res://player/main_character.tscn")
 
 func _ready() -> void:
 	_menu_pausa.open()

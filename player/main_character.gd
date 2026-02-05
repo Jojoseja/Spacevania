@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export_range(0,1) var deceleration = 0.1
 @export_range(0,1) var acceleration = 0.1
 @export_range(0,1) var decelerate_on_jump_release = 0.5
-
+var is_dead = false;
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -47,3 +47,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 		anim.play("idle")
 	move_and_slide()
+	
+func death():
+	is_dead = true
+	set_physics_process(false) 
+	anim.play("dead")
+	await (anim.animation_finished)
+	get_tree().paused = false
+	get_tree().reload_current_scene()

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://b7uitb0gj87x4"]
 
-[ext_resource type="Script" path="res://juego.gd" id="1_gvuhb"]
+[ext_resource type="Script" uid="uid://cglb0phrvl0fw" path="res://juego.gd" id="1_gvuhb"]
 [ext_resource type="PackedScene" uid="uid://cuegcoev4b7t1" path="res://gui/menu_pausa.tscn" id="2_n74ki"]
 [ext_resource type="PackedScene" uid="uid://by6b1miig51u" path="res://level/level.tscn" id="3_n74ki"]
 [ext_resource type="PackedScene" uid="uid://b3jbqjurb0ol2" path="res://player/main_character.tscn" id="4_ipdbw"]
+[ext_resource type="Script" uid="uid://cpo567gh4ad3t" path="res://zona_caida.gd" id="5_xbmtn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmtn"]
+size = Vector2(1147, 20)
 
 [node name="Juego" type="Node" unique_id=81034054]
 process_mode = 3
@@ -15,6 +19,16 @@ script = ExtResource("1_gvuhb")
 visible = false
 
 [node name="Level" parent="." unique_id=1320665385 instance=ExtResource("3_n74ki")]
+position = Vector2(-412, -142)
 
 [node name="MainCharacter" parent="." unique_id=34742091 instance=ExtResource("4_ipdbw")]
-position = Vector2(534, 299)
+position = Vector2(125, 157)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=218939140]
+script = ExtResource("5_xbmtn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1670712717]
+position = Vector2(363.5, 306)
+shape = SubResource("RectangleShape2D_xbmtn")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
