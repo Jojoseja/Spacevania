@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://b3jbqjurb0ol2"]
+[gd_scene format=3 uid="uid://ds0hdraaugwq1"]
 
 [ext_resource type="Texture2D" uid="uid://bdbv3aptokck1" path="res://assets/1 Main Characters/2/Fall.png" id="1_wylso"]
-[ext_resource type="Script" uid="uid://1qg7oog4r2w4" path="res://player/main_character.gd" id="1_xw5xi"]
+[ext_resource type="Script" path="res://player/main_character.gd" id="1_xw5xi"]
 [ext_resource type="Texture2D" uid="uid://cusvcxl17cen0" path="res://assets/1 Main Characters/2/Idle.png" id="2_xw5xi"]
 [ext_resource type="Texture2D" uid="uid://dqft2cw557ssy" path="res://assets/1 Main Characters/2/Jump.png" id="3_gc0vm"]
 [ext_resource type="Texture2D" uid="uid://q40gk7xy455j" path="res://assets/1 Main Characters/2/Run.png" id="4_vidoq"]
@@ -296,3 +296,5 @@ shape = SubResource("CapsuleShape2D_wcpx6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1204538452]
 sprite_frames = SubResource("SpriteFrames_i5kf0")
 animation = &"walk"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=738038282]

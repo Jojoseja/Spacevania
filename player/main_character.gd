@@ -35,7 +35,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		if velocity.y > 0:
 			anim.play("fall")
-	elif direction:
+			
+	if direction:
 		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
 		if Input.is_action_pressed("sprint"):
 			anim.play("run")
