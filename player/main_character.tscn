@@ -160,15 +160,15 @@ region = Rect2(352, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_i5kf0"]
 animations = [{
 "frames": [{
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vidoq")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_laib5")
 }],
 "loop": false,
 "name": &"dead",
-"speed": 14.0
+"speed": 35.0
 }, {
 "frames": [{
 "duration": 1.0,

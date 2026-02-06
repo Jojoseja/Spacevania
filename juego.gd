@@ -4,7 +4,8 @@ class_name Juego extends Node
 var player = load("res://player/main_character.tscn")
 
 func _ready() -> void:
-	_menu_pausa.open()
+	pass
+	#_menu_pausa.open()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"Pause"):
