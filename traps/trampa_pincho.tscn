@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cr1i07e3ie6x8"]
+
+[ext_resource type="Script" uid="uid://cpox0mdcxw0k" path="res://traps/trampa_pincho.gd" id="1_wxans"]
+[ext_resource type="Texture2D" uid="uid://cc77nr8w4isll" path="res://assets/6 Traps/4.png" id="2_75ayl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2iad"]
+size = Vector2(16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob61y"]
+atlas = ExtResource("2_75ayl")
+region = Rect2(0, 36, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrplr"]
+atlas = ExtResource("2_75ayl")
+region = Rect2(48, 36, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ua2"]
+atlas = ExtResource("2_75ayl")
+region = Rect2(96, 36, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4w3a"]
+atlas = ExtResource("2_75ayl")
+region = Rect2(144, 36, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu611"]
+atlas = ExtResource("2_75ayl")
+region = Rect2(192, 36, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55hm7"]
+atlas = ExtResource("2_75ayl")
+region = Rect2(240, 36, 48, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lbcj"]
+atlas = ExtResource("2_75ayl")
+region = Rect2(288, 36, 48, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1qki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob61y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrplr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ua2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4w3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu611")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55hm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lbcj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="trampa_pincho" type="Area2D" unique_id=1050138878]
+script = ExtResource("1_wxans")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1019191799]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_a2iad")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1160084387]
+position = Vector2(0, -4)
+scale = Vector2(0.6666667, 0.6666667)
+sprite_frames = SubResource("SpriteFrames_k1qki")
+autoplay = "default"
+frame_progress = 0.99058104
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

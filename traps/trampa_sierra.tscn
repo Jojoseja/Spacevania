@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://u1hk23l384nu"]
+
+[ext_resource type="Script" uid="uid://cceas1gorgpj2" path="res://traps/trampa_sierra.gd" id="1_hkhxo"]
+[ext_resource type="Texture2D" uid="uid://d3gpe2ky2etmu" path="res://assets/6 Traps/2.png" id="1_xgmvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhxo"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wpm7"]
+atlas = ExtResource("1_xgmvc")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef8py"]
+atlas = ExtResource("1_xgmvc")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd0kw"]
+atlas = ExtResource("1_xgmvc")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s00r1"]
+atlas = ExtResource("1_xgmvc")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffal4"]
+atlas = ExtResource("1_xgmvc")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj4m8"]
+atlas = ExtResource("1_xgmvc")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s7iv"]
+atlas = ExtResource("1_xgmvc")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_naa7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wpm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef8py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd0kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s00r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffal4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj4m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s7iv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="TrampaSierra" type="Area2D" unique_id=536662935]
+script = ExtResource("1_hkhxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440351916]
+shape = SubResource("RectangleShape2D_hkhxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=104047278]
+sprite_frames = SubResource("SpriteFrames_naa7n")
+autoplay = "default"
+frame_progress = 0.4632615
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
