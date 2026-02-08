@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cglb0phrvl0fw" path="res://juego.gd" id="1_gvuhb"]
 [ext_resource type="PackedScene" uid="uid://cuegcoev4b7t1" path="res://gui/menu_pausa.tscn" id="2_n74ki"]
 [ext_resource type="PackedScene" uid="uid://by6b1miig51u" path="res://level/level.tscn" id="3_n74ki"]
-[ext_resource type="PackedScene" uid="uid://b3jbqjurb0ol2" path="res://player/main_character.tscn" id="4_ipdbw"]
-[ext_resource type="Script" uid="uid://cpo567gh4ad3t" path="res://zona_caida.gd" id="5_xbmtn"]
+[ext_resource type="PackedScene" uid="uid://ds0hdraaugwq1" path="res://player/main_character.tscn" id="4_ipdbw"]
+[ext_resource type="Script" path="res://zona_caida.gd" id="5_xbmtn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmtn"]
 size = Vector2(1147, 20)
