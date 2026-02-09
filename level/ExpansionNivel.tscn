@@ -18,10 +18,9 @@ tile_set = ExtResource("1_raumu")
 
 [node name="Parallax2D" type="Parallax2D" parent="TileMapLayer" unique_id=1757724475]
 show_behind_parent = true
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(700, 500)
-autoscroll = Vector2(40, 3)
+autoscroll = Vector2(3, 3)
 repeat_times = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="TileMapLayer/Parallax2D" unique_id=1014106134]
