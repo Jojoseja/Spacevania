@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalManager="*uid://k5rby1rtor7p"
-GameManager="*uid://d0va65sxovpbd"
+GameManager="*uid://dpe4g8v0dx20k"
 
 [display]
 

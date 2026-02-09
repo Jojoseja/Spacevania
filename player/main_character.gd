@@ -48,10 +48,17 @@ func _physics_process(delta: float) -> void:
 		anim.play("idle")
 	move_and_slide()
 	
+	
 func death():
 	is_dead = true
+
 	set_physics_process(false) 
 	anim.play("dead")
 	await (anim.animation_finished)
+	
+	GameManager.cont_death += 1
+	print(GameManager.cont_death)
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	
+	
