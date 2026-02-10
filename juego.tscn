@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cglb0phrvl0fw" path="res://juego.gd" id="1_gvuhb"]
 [ext_resource type="PackedScene" uid="uid://cuegcoev4b7t1" path="res://gui/menu_pausa.tscn" id="2_n74ki"]
-[ext_resource type="PackedScene" uid="uid://by6b1miig51u" path="res://level/level.tscn" id="3_n74ki"]
 [ext_resource type="PackedScene" uid="uid://b3jbqjurb0ol2" path="res://player/main_character.tscn" id="4_ipdbw"]
+[ext_resource type="PackedScene" uid="uid://c5ub0au4a4q5k" path="res://level/ExpansionNivel.tscn" id="5_6v0qg"]
 [ext_resource type="Script" uid="uid://cpo567gh4ad3t" path="res://zona_caida.gd" id="5_xbmtn"]
 [ext_resource type="Script" uid="uid://yq7erle5ey18" path="res://UIScript.gd" id="6_6v0qg"]
 
@@ -27,17 +27,17 @@ offset_right = 1474.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 25
 
-[node name="Level" parent="." unique_id=1460946451 instance=ExtResource("3_n74ki")]
-position = Vector2(-412, -142)
-
-[node name="MainCharacter" parent="." unique_id=1826614982 instance=ExtResource("4_ipdbw")]
-position = Vector2(125, 157)
-
 [node name="Area2D" type="Area2D" parent="." unique_id=752713809]
 script = ExtResource("5_xbmtn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1258809042]
 position = Vector2(363.5, 306)
 shape = SubResource("RectangleShape2D_xbmtn")
+
+[node name="ExpansionNivel" parent="." unique_id=531580343 instance=ExtResource("5_6v0qg")]
+position = Vector2(87, 148)
+
+[node name="MainCharacter" parent="ExpansionNivel" unique_id=1826614982 instance=ExtResource("4_ipdbw")]
+position = Vector2(38, 9)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

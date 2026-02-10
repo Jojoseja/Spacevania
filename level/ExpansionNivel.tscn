@@ -1,9 +1,8 @@
 [gd_scene format=4 uid="uid://c5ub0au4a4q5k"]
 
 [ext_resource type="TileSet" uid="uid://b65bc3vo36e64" path="res://assets/tile_set.tres" id="1_raumu"]
-[ext_resource type="PackedScene" uid="uid://b3jbqjurb0ol2" path="res://player/main_character.tscn" id="2_eyx5t"]
 [ext_resource type="Texture2D" uid="uid://cow667nxibl6v" path="res://assets/imkv74m4q5g41.webp" id="2_y6e0y"]
-[ext_resource type="Script" uid="uid://dq68gi0q0o6sc" path="res://level/area_2d.gd" id="4_3clb4"]
+[ext_resource type="Script" path="res://level/area_2d.gd" id="4_3clb4"]
 [ext_resource type="PackedScene" uid="uid://u1hk23l384nu" path="res://traps/trampa_sierra.tscn" id="5_3clb4"]
 [ext_resource type="PackedScene" uid="uid://cr1i07e3ie6x8" path="res://traps/trampa_pincho.tscn" id="6_wmfi1"]
 
@@ -27,8 +26,6 @@ repeat_times = 20
 position = Vector2(3.9999924, 4.0000057)
 scale = Vector2(1.5625001, 0.8625001)
 texture = ExtResource("2_y6e0y")
-
-[node name="MainCharacter" parent="." unique_id=34742091 instance=ExtResource("2_eyx5t")]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=454743391]
 script = ExtResource("4_3clb4")
