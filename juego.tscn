@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ub0au4a4q5k" path="res://level/ExpansionNivel.tscn" id="5_6v0qg"]
 [ext_resource type="Script" uid="uid://cpo567gh4ad3t" path="res://zona_caida.gd" id="5_xbmtn"]
 [ext_resource type="Script" uid="uid://yq7erle5ey18" path="res://UIScript.gd" id="6_6v0qg"]
+[ext_resource type="AudioStream" uid="uid://cro6ffpgt5lxv" path="res://assets/Sounds/Music/Untitled.mp3" id="7_cpk6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmtn"]
 size = Vector2(1147, 20)
@@ -39,5 +40,10 @@ position = Vector2(87, 148)
 
 [node name="MainCharacter" parent="ExpansionNivel" unique_id=1826614982 instance=ExtResource("4_ipdbw")]
 position = Vector2(38, 9)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=437312246]
+stream = ExtResource("7_cpk6b")
+volume_db = 0.25
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
