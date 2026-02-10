@@ -1,0 +1,72 @@
+[gd_scene format=4 uid="uid://cb71o06okbfy2"]
+
+[ext_resource type="TileSet" uid="uid://b65bc3vo36e64" path="res://assets/tile_set.tres" id="1_4fnkw"]
+[ext_resource type="Texture2D" uid="uid://cow667nxibl6v" path="res://assets/imkv74m4q5g41.webp" id="2_xidb6"]
+[ext_resource type="PackedScene" uid="uid://bn30oqtpwcw05" path="res://level/platform/plataforma_movil.tscn" id="3_1tc2x"]
+[ext_resource type="PackedScene" uid="uid://u1hk23l384nu" path="res://traps/trampa_sierra.tscn" id="4_m607a"]
+
+[sub_resource type="Animation" id="Animation_2ovct"]
+resource_name = "FirstPlatform"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(168, 8), Vector2(280, 8), Vector2(168, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_sux7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6ylh"]
+_data = {
+&"FirstPlatform": SubResource("Animation_2ovct"),
+&"RESET": SubResource("Animation_sux7m")
+}
+
+[node name="NivelPruebas" type="Node2D" unique_id=531580343]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=27611426]
+tile_map_data = PackedByteArray("AAD//wAAAAABAAUAAAAAAAAAAAABAAUAAAABAAAAAAABAAUAAAACAAAAAAABAAUAAAADAAAAAAABAAUAAAAEAAAAAAABAAUAAAAJAAAAAAABAAUAAAD/////AAABAAUAAAD///7/AAABAAUAAAD///3/AAABAAUAAAD///z/AAABAAUAAAD///v/AAABAAUAAAAAAPv/AAABAAUAAAABAPv/AAABAAUAAAACAPv/AAABAAUAAAADAPv/AAABAAUAAAAEAPv/AAABAAUAAAAFAPv/AAABAAUAAAAGAPv/AAABAAUAAAAHAPv/AAABAAUAAAAIAPv/AAABAAUAAAAJAPv/AAABAAUAAAAIAAAAAAABAAUAAAAHAAAAAAABAAUAAAAGAAAAAAABAAUAAAAFAAAAAAABAAUAAAAUAAAAAAABAAUAAAAVAAAAAAABAAUAAAAXAAAAAAABAAUAAAAYAAAAAAABAAUAAAAZAAAAAAABAAUAAAAaAAAAAAABAAUAAAAbAAAAAAABAAUAAAAWAAAAAAABAAUAAAAbAAEAAAABAAUAAAAYAAEAAAABAAUAAAA=")
+tile_set = ExtResource("1_4fnkw")
+
+[node name="Parallax2D" type="Parallax2D" parent="TileMapLayer" unique_id=1757724475]
+visible = false
+show_behind_parent = true
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(700, 500)
+autoscroll = Vector2(3, 3)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMapLayer/Parallax2D" unique_id=1014106134]
+position = Vector2(3.9999924, 4.0000057)
+scale = Vector2(1.5625001, 0.8625001)
+texture = ExtResource("2_xidb6")
+
+[node name="PlataformaMovil" parent="." unique_id=1533946732 instance=ExtResource("3_1tc2x")]
+position = Vector2(168, 8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlataformaMovil" unique_id=1446109948]
+libraries/ = SubResource("AnimationLibrary_l6ylh")
+
+[node name="TrampaSierra" parent="." unique_id=536662935 instance=ExtResource("4_m607a")]
+position = Vector2(248, -32)

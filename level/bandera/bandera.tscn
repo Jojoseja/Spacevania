@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://csbpavwxofxkb"]
+
+[ext_resource type="Texture2D" uid="uid://2tqoep76mp68" path="res://assets/3 Objects/Checkpoints/Checkpoint_Flag_Idle1.png" id="1_4chit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax6rm"]
+size = Vector2(32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cee6k"]
+atlas = ExtResource("1_4chit")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo5fd"]
+atlas = ExtResource("1_4chit")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8fba"]
+atlas = ExtResource("1_4chit")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfdxg"]
+atlas = ExtResource("1_4chit")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ctgj"]
+atlas = ExtResource("1_4chit")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f84o4"]
+atlas = ExtResource("1_4chit")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfwq1"]
+atlas = ExtResource("1_4chit")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_norg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cee6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo5fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8fba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfdxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ctgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f84o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfwq1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bandera" type="Area2D" unique_id=1805968520]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1706444091]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_ax6rm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=251321769]
+sprite_frames = SubResource("SpriteFrames_norg8")
+frame_progress = 0.61214924
