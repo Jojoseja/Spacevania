@@ -40,6 +40,9 @@ shape = SubResource("WorldBoundaryShape2D_y6e0y")
 [node name="TrampaSierra" parent="." unique_id=536662935 instance=ExtResource("5_3clb4")]
 position = Vector2(200, 16)
 
+[node name="TrampaSierra2" parent="." unique_id=1151732230 instance=ExtResource("5_3clb4")]
+position = Vector2(200, -64)
+
 [node name="trampa_pincho" parent="." unique_id=1050138878 instance=ExtResource("6_wmfi1")]
 position = Vector2(320, 32)
 
