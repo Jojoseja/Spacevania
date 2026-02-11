@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @onready var sfx_jump = $sfx_jump
 @onready var sfx_death = $sfx_death
+@onready var sfx_steps = $sfx_steps
+@onready var sfx_run = $sfx_run
+
 
 @export var walk_speed = 150.0
 @export var run_speed = 250.0
@@ -43,14 +46,19 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
 		if Input.is_action_pressed("sprint"):
 			anim.play("run")
+			if not sfx_run.playing and is_on_floor():
+				sfx_run.play()
 		else:
 			anim.play("walk")
+			if not sfx_steps.playing and is_on_floor():
+				sfx_steps.play()
 		anim.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 		anim.play("idle")
 	move_and_slide()
 	
+
 	
 func death():
 	sfx_death.play()

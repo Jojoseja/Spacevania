@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://q40gk7xy455j" path="res://assets/1 Main Characters/2/Run.png" id="4_vidoq"]
 [ext_resource type="AudioStream" uid="uid://dmt47j2ooyo35" path="res://assets/Sounds/jump_short.wav" id="7_vidoq"]
 [ext_resource type="AudioStream" uid="uid://ceo8bm2mpwv8k" path="res://assets/Sounds/fall_quick.wav" id="8_laib5"]
+[ext_resource type="AudioStream" uid="uid://dbqd1w1wnreue" path="res://assets/Sounds/feets/foley_footstep_vinyl_1.wav" id="9_hy18s"]
+[ext_resource type="AudioStream" uid="uid://b7wb5vw1flc5i" path="res://assets/Sounds/feets/foley_footstep_vinyl_2.wav" id="10_ajrqd"]
+[ext_resource type="AudioStream" uid="uid://yrdodoxr0shs" path="res://assets/Sounds/feets/foley_footstep_vinyl_3.wav" id="11_4ysuu"]
+[ext_resource type="AudioStream" uid="uid://di4vxejwulkhr" path="res://assets/Sounds/feets/foley_footstep_vinyl_4.wav" id="12_37yox"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcpx6"]
 
@@ -309,6 +313,23 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c3x0r"]
+playback_mode = 2
+streams_count = 4
+stream_0/stream = ExtResource("9_hy18s")
+stream_0/weight = 0.0
+stream_1/stream = ExtResource("10_ajrqd")
+stream_2/stream = ExtResource("11_4ysuu")
+stream_3/stream = ExtResource("12_37yox")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hy18s"]
+playback_mode = 2
+streams_count = 4
+stream_0/stream = ExtResource("9_hy18s")
+stream_1/stream = ExtResource("10_ajrqd")
+stream_2/stream = ExtResource("11_4ysuu")
+stream_3/stream = ExtResource("12_37yox")
+
 [node name="MainCharacter" type="CharacterBody2D" unique_id=34742091]
 script = ExtResource("1_xw5xi")
 
@@ -335,3 +356,13 @@ pitch_scale = 1.3
 [node name="sfx_death" type="AudioStreamPlayer" parent="." unique_id=368194084]
 stream = ExtResource("8_laib5")
 volume_db = -19.373
+
+[node name="sfx_steps" type="AudioStreamPlayer" parent="." unique_id=1593664081]
+stream = SubResource("AudioStreamRandomizer_c3x0r")
+volume_db = -24.47
+pitch_scale = 1.66
+
+[node name="sfx_run" type="AudioStreamPlayer" parent="." unique_id=1120941122]
+stream = SubResource("AudioStreamRandomizer_hy18s")
+volume_db = -24.47
+pitch_scale = 2.1

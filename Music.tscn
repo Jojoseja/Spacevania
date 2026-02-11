@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://bp3lg7kflsu4e"]
 
 [ext_resource type="Script" uid="uid://jl87lpb3qb1k" path="res://music.gd" id="1_fw6bl"]
+[ext_resource type="AudioStream" uid="uid://fkavu40quepe" path="res://assets/Sounds/Music/Starjump Circuit.mp3" id="1_lbmby"]
 [ext_resource type="AudioStream" uid="uid://dk533jx0o8plr" path="res://assets/Sounds/Music/Untitled-2.mp3" id="1_tw4r6"]
+[ext_resource type="AudioStream" uid="uid://cro6ffpgt5lxv" path="res://assets/Sounds/Music/Untitled.mp3" id="2_s8d5d"]
+[ext_resource type="AudioStream" uid="uid://xhtbspfvs8v5" path="res://assets/Sounds/Music/Untitled-3.mp3" id="4_j2vdx"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wbwa6"]
+streams_count = 4
+stream_0/stream = ExtResource("1_lbmby")
+stream_1/stream = ExtResource("2_s8d5d")
+stream_2/stream = ExtResource("1_tw4r6")
+stream_3/stream = ExtResource("4_j2vdx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1300986774]
-stream = ExtResource("1_tw4r6")
-volume_db = -20.037
+stream = SubResource("AudioStreamRandomizer_wbwa6")
+volume_db = -30.549
 script = ExtResource("1_fw6bl")
