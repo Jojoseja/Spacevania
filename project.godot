@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 SignalManager="*uid://k5rby1rtor7p"
 GameManager="*uid://dpe4g8v0dx20k"
+Music="*uid://bp3lg7kflsu4e"
 
 [display]
 

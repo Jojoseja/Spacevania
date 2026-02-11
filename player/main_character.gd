@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
+@onready var sfx_jump = $sfx_jump
+@onready var sfx_death = $sfx_death
 
 @export var walk_speed = 150.0
 @export var run_speed = 250.0
@@ -18,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor(): 
 		velocity.y = jump_force 
+		sfx_jump.play()
 
 	if Input.is_action_just_released("jump") and velocity.y < 0: 
 		velocity.y *= decelerate_on_jump_release
@@ -50,6 +53,8 @@ func _physics_process(delta: float) -> void:
 	
 	
 func death():
+	sfx_death.play()
+	
 	is_dead = true
 
 	set_physics_process(false) 
