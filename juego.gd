@@ -1,11 +1,11 @@
 class_name Juego extends Node
 
 @onready var _menu_pausa := $CanvasLayer/MenuPausa as MenuPausa
+
 var player = load("res://player/main_character.tscn")
 
 func _ready() -> void:
 	pass
-	#_menu_pausa.open()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"Pause"):

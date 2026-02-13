@@ -16,6 +16,18 @@ extends CharacterBody2D
 var is_dead = false;
 
 func _physics_process(delta: float) -> void:
+	
+	if not MusicManager.is_sfx_active:
+		sfx_jump.volume_db = -100
+		sfx_death.volume_db = -100
+		sfx_steps.volume_db = -100
+		sfx_run.volume_db = -100
+	else: 
+		sfx_jump.volume_db = -20
+		sfx_death.volume_db = -20
+		sfx_steps.volume_db = -20
+		sfx_run.volume_db = -20
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

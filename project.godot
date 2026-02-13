@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Videojuego"
-run/main_scene="uid://b7uitb0gj87x4"
+run/main_scene="uid://bdkbxpv0fx4hn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -23,7 +23,8 @@ config/icon="res://icon.svg"
 
 SignalManager="*uid://k5rby1rtor7p"
 GameManager="*uid://dpe4g8v0dx20k"
-Music="*uid://bp3lg7kflsu4e"
+MusicManager="*uid://jl87lpb3qb1k"
+Music="*uid://b1j5vebx10muh"
 
 [display]
 

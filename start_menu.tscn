@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bdkbxpv0fx4hn"]
+
+[ext_resource type="Script" uid="uid://yadnbebojrgw" path="res://main_menu.gd" id="1_ia0g5"]
+[ext_resource type="Texture2D" uid="uid://d2pmui8y1vg6a" path="res://assets/task_01kh74a02sewv906panpb4aw0w-1770839721_img_1.webp" id="1_jwbto"]
+[ext_resource type="AudioStream" uid="uid://c84cm15gggr0b" path="res://assets/Sounds/mixkit-camera-shutter-click-1133.wav" id="3_vpdu5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwbto"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia0g5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpdu5"]
+
+[node name="StartMenu" type="Control" unique_id=260532080]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ia0g5")
+
+[node name="Label" type="Label" parent="." unique_id=1950137699]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 129.0
+offset_right = 987.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 60
+text = "SPACE VANIA"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=691467620]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 1024.0
+texture = ExtResource("1_jwbto")
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect" unique_id=1102556120]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 715.0
+offset_top = 59.0
+offset_right = -107.0
+offset_bottom = -276.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer" unique_id=1092590179]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1428439153]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Start Menú"
+horizontal_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=858619659]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Iniciar" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1916632901]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "Iniciar"
+
+[node name="HSeparator" type="HSeparator" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1462678098]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxFlat_jwbto")
+
+[node name="SFXButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1367446950]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "SFX: ON"
+
+[node name="HSeparator2" type="HSeparator" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1792415578]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxFlat_ia0g5")
+
+[node name="MusicButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1867874664]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "MUSIC: ON"
+
+[node name="HSeparator3" type="HSeparator" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=367661735]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxFlat_vpdu5")
+
+[node name="Salir" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1961115773]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=511027012]
+stream = ExtResource("3_vpdu5")
+volume_db = -18.0
+
+[connection signal="focus_entered" from="TextureRect/CenterContainer/VBoxContainer/Iniciar" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="focus_entered" from="TextureRect/CenterContainer/VBoxContainer/SFXButton" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/SFXButton" to="." method="_on_sfx_button_pressed"]
+[connection signal="focus_entered" from="TextureRect/CenterContainer/VBoxContainer/MusicButton" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="focus_entered" from="TextureRect/CenterContainer/VBoxContainer/Salir" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
