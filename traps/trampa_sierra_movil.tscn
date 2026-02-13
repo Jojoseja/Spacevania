@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://182w2yw73oc1"]
+
+[ext_resource type="Script" uid="uid://cceas1gorgpj2" path="res://traps/trampa_sierra.gd" id="1_27njo"]
+[ext_resource type="Texture2D" uid="uid://d3gpe2ky2etmu" path="res://assets/6 Traps/2.png" id="2_pdxf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhxo"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5r4f"]
+atlas = ExtResource("2_pdxf6")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1xf7"]
+atlas = ExtResource("2_pdxf6")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj33j"]
+atlas = ExtResource("2_pdxf6")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33lvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5r4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1xf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj33j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="SierraMovil" type="Area2D" unique_id=536662935]
+script = ExtResource("1_27njo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440351916]
+shape = SubResource("RectangleShape2D_hkhxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=104047278]
+sprite_frames = SubResource("SpriteFrames_33lvi")
+frame_progress = 0.8634644
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

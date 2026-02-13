@@ -2,17 +2,135 @@
 
 [ext_resource type="TileSet" uid="uid://b65bc3vo36e64" path="res://assets/tile_set.tres" id="1_raumu"]
 [ext_resource type="Texture2D" uid="uid://cow667nxibl6v" path="res://assets/imkv74m4q5g41.webp" id="2_y6e0y"]
-[ext_resource type="Script" path="res://level/area_2d.gd" id="4_3clb4"]
+[ext_resource type="Script" uid="uid://dq68gi0q0o6sc" path="res://level/area_2d.gd" id="4_3clb4"]
 [ext_resource type="PackedScene" uid="uid://u1hk23l384nu" path="res://traps/trampa_sierra.tscn" id="5_3clb4"]
+[ext_resource type="PackedScene" uid="uid://182w2yw73oc1" path="res://traps/trampa_sierra_movil.tscn" id="6_77xmn"]
+[ext_resource type="PackedScene" uid="uid://bn30oqtpwcw05" path="res://level/platform/plataforma_movil.tscn" id="6_minnv"]
 [ext_resource type="PackedScene" uid="uid://cr1i07e3ie6x8" path="res://traps/trampa_pincho.tscn" id="6_wmfi1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6e0y"]
 distance = 128.0
 
+[sub_resource type="Animation" id="Animation_4d532"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, -128)]
+}
+
+[sub_resource type="Animation" id="Animation_xxt6p"]
+resource_name = "trampa_sierra_movil"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-32, -128), Vector2(560, -128), Vector2(-32, -128)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sjxfo"]
+_data = {
+&"RESET": SubResource("Animation_4d532"),
+&"trampa_sierra_movil": SubResource("Animation_xxt6p")
+}
+
+[sub_resource type="Animation" id="Animation_77xmn"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(376, 40), Vector2(532, 40), Vector2(376, 40)]
+}
+
+[sub_resource type="Animation" id="Animation_ctw4m"]
+resource_name = "platform1"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(376, 40), Vector2(530, 40), Vector2(376, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4d532"]
+_data = {
+&"RESET": SubResource("Animation_77xmn"),
+&"platform1": SubResource("Animation_ctw4m")
+}
+
+[sub_resource type="Animation" id="Animation_wmfi1"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(584, -102), Vector2(584, 40), Vector2(584, -102)]
+}
+
+[sub_resource type="Animation" id="Animation_minnv"]
+resource_name = "platform2"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(576, -96), Vector2(576, 40), Vector2(576, -96)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77xmn"]
+_data = {
+&"RESET": SubResource("Animation_wmfi1"),
+&"platform2": SubResource("Animation_minnv")
+}
+
 [node name="ExpansionNivel" type="Node2D" unique_id=531580343]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=27611426]
-tile_map_data = PackedByteArray("AAD+/wIAAAABAAUAAAD9/wIAAAABAAUAAAD8/wIAAAABAAUAAAD//wIAAAABAAUAAAAAAAIAAAABAAUAAAABAAIAAAABAAUAAAACAAIAAAABAAUAAAADAAIAAAABAAUAAAAEAAIAAAABAAUAAAAFAAIAAAABAAUAAAAGAAIAAAABAAUAAAAHAAIAAAABAAUAAAAIAAIAAAABAAUAAAAJAAIAAAABAAUAAAAKAAIAAAABAAUAAAALAAIAAAABAAUAAAAMAAIAAAABAAUAAAANAAIAAAABAAUAAAAOAAIAAAABAAUAAAAPAAIAAAABAAUAAAAQAAIAAAABAAUAAAARAAIAAAABAAUAAAASAAIAAAABAAUAAAATAAIAAAABAAUAAAAUAAIAAAABAAUAAAAVAAIAAAABAAUAAAAWAAIAAAABAAUAAAAXAAIAAAABAAUAAAAYAAIAAAABAAUAAAAZAAIAAAABAAUAAAAaAAIAAAABAAUAAAAbAAIAAAABAAUAAAAcAAIAAAABAAUAAAAdAAIAAAABAAUAAAAeAAIAAAABAAUAAAAfAAIAAAABAAUAAAAgAAIAAAABAAUAAAAhAAIAAAABAAUAAAAiAAIAAAABAAUAAAAjAAIAAAABAAUAAAAkAAIAAAABAAUAAAAlAAIAAAABAAUAAAAmAAIAAAABAAUAAAAnAAIAAAABAAUAAAAoAAIAAAABAAUAAAApAAIAAAABAAUAAAAqAAIAAAABAAUAAAA=")
+tile_map_data = PackedByteArray("AAD+/wIAAAABAAQAAAD9/wIAAAABAAQAAAD8/wIAAAABAAQAAAD//wIAAAABAAQAAAAAAAIAAAABAAQAAAABAAIAAAABAAQAAAACAAIAAAABAAQAAAADAAIAAAABAAQAAAAEAAIAAAABAAQAAAAFAAIAAAABAAQAAAAGAAIAAAABAAQAAAAHAAIAAAABAAQAAAAIAAIAAAABAAQAAAAJAAIAAAABAAQAAAAKAAIAAAABAAQAAAALAAIAAAABAAQAAAAMAAIAAAABAAQAAAANAAIAAAABAAQAAAAOAAIAAAABAAQAAAAPAAIAAAABAAQAAAAQAAIAAAABAAQAAAARAAIAAAABAAQAAAASAAIAAAABAAQAAAATAAIAAAABAAQAAAAUAAIAAAABAAQAAAAVAAIAAAABAAQAAAAWAAIAAAABAAQAAAD8/wEAAAABAAQAAAD8/wAAAAABAAQAAAD8////AAABAAQAAAD8//7/AAABAAQAAAD8//3/AAABAAQAAAD8//z/AAABAAQAAAD8//v/AAABAAQAAAD8//r/AAABAAQAAAD9//r/AAABAAQAAAD+//r/AAABAAQAAAD///r/AAABAAQAAAAAAPr/AAABAAQAAAABAPr/AAABAAQAAAACAPr/AAABAAQAAAADAPr/AAABAAQAAAAEAPr/AAABAAQAAAAFAPr/AAABAAQAAAAGAPr/AAABAAQAAAAHAPr/AAABAAQAAAAIAPr/AAABAAQAAAAJAPr/AAABAAQAAAAKAPr/AAABAAQAAAALAPr/AAABAAQAAAAMAPr/AAABAAQAAAANAPr/AAABAAQAAAAOAPr/AAABAAQAAAAPAPr/AAABAAQAAAAQAPr/AAABAAQAAAARAPr/AAABAAQAAAASAPr/AAABAAQAAAATAPr/AAABAAQAAAAUAPr/AAABAAQAAAAVAPr/AAABAAQAAAAWAPr/AAABAAQAAAAXAPr/AAABAAQAAAAnAPr/AAABAAQAAAAnAPv/AAABAAQAAAAnAPz/AAABAAQAAAAnAP3/AAABAAQAAAAnAP7/AAABAAQAAAAnAP//AAABAAQAAAAnAAAAAAABAAQAAAAnAAEAAAABAAQAAAAnAAIAAAABAAQAAAAYAPr/AAABAAQAAAAZAPr/AAABAAQAAAAaAPr/AAABAAQAAAAbAPr/AAABAAQAAAAcAPr/AAABAAQAAAAdAPr/AAABAAQAAAAeAPr/AAABAAQAAAAfAPr/AAABAAQAAAAgAPr/AAABAAQAAAAhAPr/AAABAAQAAAAiAPr/AAABAAQAAAAjAPr/AAABAAQAAAAnAPn/AAAHAAgAAAAnAPj/AAAHAAgAAAAnAPf/AAAHAAgAAAAnAPb/AAAHAAgAAAAnAPX/AAAHAAgAAAAnAPT/AAAHAAgAAAAjAPn/AAAHAAgAAAAiAPn/AAAHAAgAAAAhAPn/AAAHAAgAAAAgAPn/AAAHAAgAAAAfAPn/AAAHAAgAAAAeAPn/AAAHAAgAAAAdAPn/AAAHAAgAAAAcAPn/AAAHAAgAAAAbAPn/AAAHAAgAAAAaAPn/AAAHAAgAAAAZAPn/AAAHAAgAAAAYAPn/AAAHAAgAAAAXAPn/AAAHAAgAAAAWAPn/AAAHAAgAAAAVAPn/AAAHAAgAAAAUAPn/AAAHAAgAAAATAPn/AAAHAAgAAAASAPn/AAAHAAgAAAARAPn/AAAHAAgAAAAQAPn/AAAHAAgAAAAPAPn/AAAHAAgAAAAOAPn/AAAHAAgAAAANAPn/AAAHAAgAAAAMAPn/AAAHAAgAAAALAPn/AAAHAAgAAAAKAPn/AAAHAAgAAAAJAPn/AAAHAAgAAAAIAPn/AAAHAAgAAAAHAPn/AAAHAAgAAAAGAPn/AAAHAAgAAAAFAPn/AAAHAAgAAAAEAPn/AAAHAAgAAAADAPn/AAAHAAgAAAACAPn/AAAHAAgAAAABAPn/AAAHAAgAAAAAAPn/AAAHAAgAAAD///n/AAAHAAgAAAD+//n/AAAHAAgAAAD9//n/AAAHAAgAAAD8//n/AAAHAAgAAAD8//j/AAAHAAgAAAD8//f/AAAHAAgAAAD8//b/AAAHAAgAAAD8//X/AAAHAAgAAAD8//T/AAAHAAgAAAD8//P/AAAHAAgAAAD8//L/AAAHAAgAAAD8//H/AAAHAAgAAAABAPH/AAAHAAgAAAAAAPH/AAAHAAgAAAACAPH/AAAHAAgAAAADAPH/AAAHAAgAAAAEAPH/AAAHAAgAAAAFAPH/AAAHAAgAAAAGAPH/AAAHAAgAAAAHAPH/AAAHAAgAAAAIAPH/AAAHAAgAAAAJAPH/AAAHAAgAAAAKAPH/AAAHAAgAAAALAPH/AAAHAAgAAAAMAPH/AAAHAAgAAAANAPH/AAAHAAgAAAAOAPH/AAAHAAgAAAAPAPH/AAAHAAgAAAAQAPH/AAAHAAgAAAARAPH/AAAHAAgAAAASAPH/AAAHAAgAAAATAPH/AAAHAAgAAAAUAPH/AAAHAAgAAAAVAPH/AAAHAAgAAAAWAPH/AAAHAAgAAAAXAPH/AAAHAAgAAAAYAPH/AAAHAAgAAAAZAPH/AAAHAAgAAAAaAPH/AAAHAAgAAAAbAPH/AAAHAAgAAAAcAPH/AAAHAAgAAAAdAPH/AAAHAAgAAAAeAPH/AAAHAAgAAAAfAPH/AAAHAAgAAAAgAPH/AAAHAAgAAAAmAPH/AAAHAAgAAAAnAPH/AAAHAAgAAAAlAPH/AAAHAAgAAAAkAPH/AAAHAAgAAAAjAPH/AAAHAAgAAAAiAPH/AAAHAAgAAAAhAPH/AAAHAAgAAAAnAPL/AAAHAAgAAAAnAPP/AAAHAAgAAAA=")
 tile_set = ExtResource("1_raumu")
 
 [node name="Parallax2D" type="Parallax2D" parent="TileMapLayer" unique_id=1757724475]
@@ -34,13 +152,41 @@ script = ExtResource("4_3clb4")
 position = Vector2(48, 256)
 shape = SubResource("WorldBoundaryShape2D_y6e0y")
 
-[node name="TrampaSierra" parent="." unique_id=536662935 instance=ExtResource("5_3clb4")]
+[node name="trampas" type="Node" parent="." unique_id=118900904]
+
+[node name="TrampaSierra" parent="trampas" unique_id=536662935 instance=ExtResource("5_3clb4")]
 position = Vector2(200, 16)
 
-[node name="TrampaSierra2" parent="." unique_id=1151732230 instance=ExtResource("5_3clb4")]
+[node name="TrampaSierra2" parent="trampas" unique_id=1151732230 instance=ExtResource("5_3clb4")]
 position = Vector2(200, -64)
 
-[node name="trampa_pincho" parent="." unique_id=1050138878 instance=ExtResource("6_wmfi1")]
+[node name="TrampaSierra3" parent="trampas" unique_id=369392825 instance=ExtResource("5_3clb4")]
+position = Vector2(464, -40)
+
+[node name="trampa_pincho" parent="trampas" unique_id=1050138878 instance=ExtResource("6_wmfi1")]
 position = Vector2(320, 32)
+
+[node name="SierraMovil" parent="trampas" unique_id=240253869 instance=ExtResource("6_77xmn")]
+position = Vector2(-32, -128)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="trampas/SierraMovil" unique_id=2019231289]
+libraries/ = SubResource("AnimationLibrary_sjxfo")
+autoplay = &"trampa_sierra_movil"
+
+[node name="plataformas" type="Node" parent="." unique_id=1330055910]
+
+[node name="PlataformaMovil" parent="plataformas" unique_id=1533946732 instance=ExtResource("6_minnv")]
+position = Vector2(376, 40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataformas/PlataformaMovil" unique_id=2081791493]
+libraries/ = SubResource("AnimationLibrary_4d532")
+autoplay = &"RESET"
+
+[node name="PlataformaMovil2" parent="plataformas" unique_id=357361879 instance=ExtResource("6_minnv")]
+position = Vector2(584, -102)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataformas/PlataformaMovil2" unique_id=53483915]
+libraries/ = SubResource("AnimationLibrary_77xmn")
+autoplay = &"RESET"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

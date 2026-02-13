@@ -6,6 +6,7 @@
 size = Vector2(48, 16)
 
 [node name="PlataformaMovil" type="AnimatableBody2D" unique_id=1533946732]
+position = Vector2(8, 8)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=676822510]

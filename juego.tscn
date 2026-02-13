@@ -43,7 +43,6 @@ position = Vector2(363.5, 306)
 shape = SubResource("RectangleShape2D_xbmtn")
 
 [node name="ExpansionNivel" parent="." unique_id=531580343 instance=ExtResource("5_6v0qg")]
-position = Vector2(87, 148)
 
 [node name="MainCharacter" parent="ExpansionNivel" unique_id=1826614982 instance=ExtResource("4_ipdbw")]
 position = Vector2(38, 9)

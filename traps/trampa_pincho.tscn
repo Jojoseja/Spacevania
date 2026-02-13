@@ -37,7 +37,7 @@ region = Rect2(288, 36, 48, 12)
 [sub_resource type="SpriteFrames" id="SpriteFrames_k1qki"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_ob61y")
 }, {
 "duration": 1.0,
@@ -75,6 +75,6 @@ position = Vector2(0, -4)
 scale = Vector2(0.6666667, 0.6666667)
 sprite_frames = SubResource("SpriteFrames_k1qki")
 autoplay = "default"
-frame_progress = 0.99058104
+frame_progress = 0.2536492
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
