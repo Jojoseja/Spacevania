@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cuegcoev4b7t1"]
 
 [ext_resource type="Script" uid="uid://b8si87ew017jq" path="res://gui/menu_pausa.gd" id="1_m2cwa"]
+[ext_resource type="AudioStream" uid="uid://dho6a0se2vwc4" path="res://assets/Sounds/ClickAudio.wav" id="2_3ed54"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2cwa"]
 
 [node name="MenuPausa" type="Control" unique_id=582263652]
 process_mode = 3
@@ -32,18 +35,31 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1296630788]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Menú de Pausa"
 
 [node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=340434608]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Continuar" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1542875760]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Continuar"
+
+[node name="HSeparator3" type="HSeparator" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=2070857877]
+layout_mode = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxFlat_m2cwa")
 
 [node name="Salir" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=841291107]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=480354937]
+stream = ExtResource("2_3ed54")
+volume_db = -18.0
 
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

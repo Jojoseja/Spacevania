@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://yadnbebojrgw" path="res://main_menu.gd" id="1_ia0g5"]
 [ext_resource type="Texture2D" uid="uid://d2pmui8y1vg6a" path="res://assets/task_01kh74a02sewv906panpb4aw0w-1770839721_img_1.webp" id="1_jwbto"]
-[ext_resource type="AudioStream" uid="uid://c84cm15gggr0b" path="res://assets/Sounds/mixkit-camera-shutter-click-1133.wav" id="3_vpdu5"]
+[ext_resource type="AudioStream" uid="uid://dho6a0se2vwc4" path="res://assets/Sounds/ClickAudio.wav" id="3_vpdu5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwbto"]
 

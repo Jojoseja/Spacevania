@@ -7,9 +7,10 @@ extends Control
 
 func _ready():
 	pass
-
 	
 func _on_iniciar_pressed() -> void:
+	click_button.play()
+	await click_button.finished
 	get_tree().change_scene_to_file("res://juego.tscn")
 
 func _on_sfx_button_pressed() -> void:
