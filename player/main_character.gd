@@ -82,7 +82,6 @@ func death():
 	await (anim.animation_finished)
 	
 	GameManager.cont_death += 1
-	print(GameManager.cont_death)
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	
