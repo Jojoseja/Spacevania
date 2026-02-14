@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://182w2yw73oc1" path="res://traps/trampa_sierra_movil.tscn" id="6_77xmn"]
 [ext_resource type="PackedScene" uid="uid://bn30oqtpwcw05" path="res://level/platform/plataforma_movil.tscn" id="6_minnv"]
 [ext_resource type="PackedScene" uid="uid://cr1i07e3ie6x8" path="res://traps/trampa_pincho.tscn" id="6_wmfi1"]
+[ext_resource type="PackedScene" uid="uid://dgujbl0lmvxrk" path="res://enemy/enemigotv/enemigotv.tscn" id="8_77xmn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6e0y"]
 distance = 128.0
@@ -188,5 +189,10 @@ position = Vector2(584, -102)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="plataformas/PlataformaMovil2" unique_id=53483915]
 libraries/ = SubResource("AnimationLibrary_77xmn")
 autoplay = &"RESET"
+
+[node name="enemigos" type="Node" parent="." unique_id=631779147]
+
+[node name="enemigotv" parent="enemigos" unique_id=688816900 instance=ExtResource("8_77xmn")]
+position = Vector2(616, -280)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
