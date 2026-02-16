@@ -22,6 +22,8 @@ func toggle_music():
 	is_music_active = not is_music_active
 	if not is_music_active:
 		volume_db = -100
+	else:
+		volume_db = -24
 
 func _play_random() -> void:
 	stream = songs.pick_random()
