@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bolmc5djfbgof"]
 
-[ext_resource type="Script" path="res://victoria_pantalla.gd" id="1_xsyvq"]
+[ext_resource type="Script" uid="uid://sk1segh381aj" path="res://victoria_pantalla.gd" id="1_xsyvq"]
 [ext_resource type="AudioStream" uid="uid://pw6wtf0lcu7h" path="res://assets/Sounds/applause.wav" id="2_xsyvq"]
+[ext_resource type="AudioStream" uid="uid://dho6a0se2vwc4" path="res://assets/Sounds/ClickAudio.wav" id="3_fo5ob"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2cwa"]
 
@@ -58,9 +59,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Salir"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1106536591]
+[node name="Aplausos" type="AudioStreamPlayer" parent="." unique_id=1106536591]
 stream = ExtResource("2_xsyvq")
 autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=334675241]
+stream = ExtResource("3_fo5ob")
+volume_db = -18.0
 
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/VolverAJugar" to="." method="_on_volver_a_jugar_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

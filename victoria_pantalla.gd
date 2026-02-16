@@ -1,18 +1,23 @@
 class_name VictoriaPantalla extends Control
 
 @onready var click_button = $AudioStreamPlayer
+@onready var aplausos = $Aplausos
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
+	aplausos.stop()
+
 
 func close() -> void:
+	aplausos.stop()
 	get_tree().paused = false
 	visible = false
 
 func open() -> void:
 	visible = true
 	get_tree().paused = true
+	aplausos.play()
 
 
 # Volver a jugar

@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_xbmtn")
 process_mode = 1
 
 [node name="MainCharacter" parent="ExpansionNivel" unique_id=1826614982 instance=ExtResource("4_ipdbw")]
-position = Vector2(2, 14)
+position = Vector2(-865, -428)
 
 [node name="bandera" parent="." unique_id=1805968520 instance=ExtResource("9_l4niy")]
 position = Vector2(-928, -424)
