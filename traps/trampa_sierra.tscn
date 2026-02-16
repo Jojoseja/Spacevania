@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cceas1gorgpj2" path="res://traps/trampa_sierra.gd" id="1_hkhxo"]
 [ext_resource type="Texture2D" uid="uid://d3gpe2ky2etmu" path="res://assets/6 Traps/2.png" id="1_xgmvc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhxo"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hkhxo"]
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wpm7"]
 atlas = ExtResource("1_xgmvc")
@@ -67,7 +67,7 @@ animations = [{
 script = ExtResource("1_hkhxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440351916]
-shape = SubResource("RectangleShape2D_hkhxo")
+shape = SubResource("CircleShape2D_hkhxo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=104047278]
 sprite_frames = SubResource("SpriteFrames_naa7n")

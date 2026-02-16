@@ -1,6 +1,7 @@
 class_name Juego extends Node
 
 @onready var _menu_pausa := $CanvasLayer/MenuPausa as MenuPausa
+@onready var _victoria_pantalla := $CanvasLayer/VictoriaPantalla as VictoriaPantalla
 
 var player = load("res://player/main_character.tscn")
 

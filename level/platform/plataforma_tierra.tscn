@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d2671ue830mb5"]
+
+[ext_resource type="Texture2D" uid="uid://eikq2ox53be6" path="res://assets/2 Locations/Tiles/Tile_01.png" id="1_vnkcf"]
+[ext_resource type="Texture2D" uid="uid://tp27pm8wv1dj" path="res://assets/2 Locations/Tiles/Tile_02.png" id="2_yc7g1"]
+[ext_resource type="Texture2D" uid="uid://b8icxs7x6dj7f" path="res://assets/2 Locations/Tiles/Tile_03.png" id="3_wvrdf"]
+[ext_resource type="Texture2D" uid="uid://b45k7tmp5mdpd" path="res://assets/2 Locations/Tiles/Tile_05.png" id="4_7nalm"]
+[ext_resource type="Texture2D" uid="uid://cysxwol8220bb" path="res://assets/2 Locations/Tiles/Tile_30.png" id="5_4r5hw"]
+[ext_resource type="Texture2D" uid="uid://cnjkq4wr4ls4k" path="res://assets/2 Locations/Tiles/Tile_31.png" id="6_vn25n"]
+[ext_resource type="Texture2D" uid="uid://bgatl38mc6qih" path="res://assets/2 Locations/Tiles/Tile_29.png" id="7_xsfp8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7fsl"]
+size = Vector2(64, 32)
+
+[node name="plataforma-tierra" type="AnimatableBody2D" unique_id=1733811775]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=174629081]
+texture = ExtResource("1_vnkcf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1465175673]
+position = Vector2(16, 0)
+texture = ExtResource("2_yc7g1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1127990001]
+position = Vector2(48, 0)
+texture = ExtResource("3_wvrdf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=946199840]
+position = Vector2(32, 0)
+texture = ExtResource("2_yc7g1")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=913863068]
+position = Vector2(24, 16)
+texture = ExtResource("4_7nalm")
+
+[node name="Tile30" type="Sprite2D" parent="." unique_id=170751683]
+position = Vector2(24, 16)
+texture = ExtResource("5_4r5hw")
+
+[node name="Tile31" type="Sprite2D" parent="." unique_id=882906649]
+position = Vector2(40, 16)
+texture = ExtResource("6_vn25n")
+
+[node name="Tile29" type="Sprite2D" parent="." unique_id=1273697279]
+position = Vector2(8, 16)
+texture = ExtResource("7_xsfp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1365341698]
+position = Vector2(24, 8)
+shape = SubResource("RectangleShape2D_l7fsl")

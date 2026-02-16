@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://csbpavwxofxkb"]
 
 [ext_resource type="Texture2D" uid="uid://2tqoep76mp68" path="res://assets/3 Objects/Checkpoints/Checkpoint_Flag_Idle1.png" id="1_4chit"]
+[ext_resource type="Script" uid="uid://c5btb845ft88r" path="res://level/bandera/bandera.gd" id="1_gomvl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax6rm"]
 size = Vector2(32, 48)
@@ -63,6 +64,7 @@ animations = [{
 }]
 
 [node name="bandera" type="Area2D" unique_id=1805968520]
+script = ExtResource("1_gomvl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1706444091]
 position = Vector2(8, 0)
@@ -70,4 +72,6 @@ shape = SubResource("RectangleShape2D_ax6rm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=251321769]
 sprite_frames = SubResource("SpriteFrames_norg8")
-frame_progress = 0.61214924
+frame_progress = 0.9150365
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

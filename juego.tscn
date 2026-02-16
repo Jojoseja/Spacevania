@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bo6eqwqvab68x" path="res://assets/5 GUI/Icons/Icon_01.png" id="4_icdfu"]
 [ext_resource type="PackedScene" uid="uid://b3jbqjurb0ol2" path="res://player/main_character.tscn" id="4_ipdbw"]
 [ext_resource type="PackedScene" uid="uid://c5ub0au4a4q5k" path="res://level/ExpansionNivel.tscn" id="5_6v0qg"]
+[ext_resource type="PackedScene" uid="uid://c15pf0xpp7nnp" path="res://gui/victoria_pantalla.tscn" id="5_icdfu"]
 [ext_resource type="Script" uid="uid://cpo567gh4ad3t" path="res://zona_caida.gd" id="5_xbmtn"]
 [ext_resource type="Script" uid="uid://yq7erle5ey18" path="res://UIScript.gd" id="6_6v0qg"]
+[ext_resource type="PackedScene" uid="uid://csbpavwxofxkb" path="res://level/bandera/bandera.tscn" id="9_l4niy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmtn"]
 size = Vector2(1147, 20)
@@ -35,6 +37,9 @@ offset_right = 1430.0
 offset_bottom = 84.0
 texture = ExtResource("4_icdfu")
 
+[node name="VictoriaPantalla" parent="CanvasLayer" unique_id=582263652 instance=ExtResource("5_icdfu")]
+top_level = true
+
 [node name="Area2D" type="Area2D" parent="." unique_id=752713809]
 script = ExtResource("5_xbmtn")
 
@@ -49,5 +54,8 @@ process_mode = 1
 position = Vector2(38, 9)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1581757324]
+
+[node name="bandera" parent="." unique_id=1805968520 instance=ExtResource("9_l4niy")]
+position = Vector2(-928, -424)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

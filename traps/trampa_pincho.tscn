@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cc77nr8w4isll" path="res://assets/6 Traps/4.png" id="2_75ayl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2iad"]
-size = Vector2(16, 8)
+size = Vector2(11.5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ob61y"]
 atlas = ExtResource("2_75ayl")
@@ -67,11 +67,11 @@ animations = [{
 script = ExtResource("1_wxans")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1019191799]
-position = Vector2(0, -4)
+position = Vector2(0.25, -2.5)
 shape = SubResource("RectangleShape2D_a2iad")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1160084387]
-position = Vector2(0, -4)
+position = Vector2(0, -3.9999998)
 scale = Vector2(0.6666667, 0.6666667)
 sprite_frames = SubResource("SpriteFrames_k1qki")
 autoplay = "default"
