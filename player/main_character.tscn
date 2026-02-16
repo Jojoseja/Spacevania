@@ -341,7 +341,7 @@ sprite_frames = SubResource("SpriteFrames_i5kf0")
 animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=738038282]
-zoom = Vector2(1.6, 1.6)
+zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
